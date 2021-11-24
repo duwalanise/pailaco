@@ -17,9 +17,21 @@ code {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #F5F5DC;
 }
 
 .soon {
-  font-size: 42;
+  font-size: 72px;
   font-weight: 600;
+  color: #5F9EA0;
+  animation: scale 2s infinite;
+
+}
+
+@keyframes scale {
+  0%   {transform: scale(1);}
+  25%  {transform: scale(1.2);}
+  50%  {transform: scale(1.1);}
+  75%  {transform: scale(1.2);}
+  100% {transform: scale(1);}
 }
