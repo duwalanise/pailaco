@@ -21,12 +21,12 @@ const Title = styled.span`
 `;
 
 const Image = styled.img`
-  margin-top: -42px;
+  margin: -42px;
+  max-width: 90%;
 `;
 
 const UnderMaintenence = styled.div`
-  margin-top: -42px;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 400;
   color: #888;
   text-transform: uppercase;
@@ -42,7 +42,7 @@ const IndexPage = () => {
           <Title>Paila</Title> a step towards quality.
         </p>
         <Image src={underConstruction} />
-        <UnderMaintenence>Site Under Construction</UnderMaintenence>
+        <UnderMaintenence>Website Under Construction</UnderMaintenence>
       </Wrapper>
     </Layout>
   );
