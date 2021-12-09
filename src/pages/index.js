@@ -3,15 +3,16 @@ import styled from "@emotion/styled";
 
 import Layout from "../layouts";
 import Seo from "../layouts/common/seo";
-import underConstruction from "../images/underConstruction.png";
+import Card from "../component/Card";
+import products from "../constants/products";
 
 const Wrapper = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
   flex-direction: column;
+  overflow: auto;
+  min-height: 100vh;
 `;
 
 const Title = styled.span`
@@ -20,15 +21,22 @@ const Title = styled.span`
   color: #5f9ea0;
 `;
 
-const Image = styled.img`
-  margin: -42px;
-  max-width: 90%;
+const ProductWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  max-width: 960px;
+  align-items: center;
+  margin-top: 120px;
+  margin-bottom: 120px;
+  @media (max-width: 600px) {
+    flex-direction: column;
+  },
 `;
 
 const UnderMaintenence = styled.div`
   font-size: 24px;
   font-weight: 400;
-  color: #888;
+  color: #8fbc8f;
   text-transform: uppercase;
 `;
 
@@ -41,8 +49,12 @@ const IndexPage = () => {
         <p>
           <Title>Paila</Title> a step towards quality.
         </p>
-        <Image src={underConstruction} />
-        <UnderMaintenence>Website Under Construction</UnderMaintenence>
+        <ProductWrapper>
+          {products.map((product) => (
+            <Card product={product} key={product.id} />
+          ))}
+        </ProductWrapper>
+        <UnderMaintenence>Website Under Maintenance</UnderMaintenence>
       </Wrapper>
     </Layout>
   );

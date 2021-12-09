@@ -10,7 +10,7 @@ const Wrapper = styled.main`
   width: 100vw;
   display: flex;
   overflow-x: hidden;
-  background: #f5f5dc;
+  background: #f6fafe;
 `;
 
 const Layout = ({ children, ...props }) => {
