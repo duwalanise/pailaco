@@ -1,5 +1,4 @@
 import * as React from "react";
-import styled from "@emotion/styled";
 
 import Layout from "../layouts";
 import Seo from "../layouts/common/seo";

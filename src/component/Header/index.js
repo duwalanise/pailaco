@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import { gsap } from "gsap";
 import Logo from "../../images/icon.png";
+import { breakpoints } from "../../layouts/theme/theme";
+import NavMenu from "../NavMenu";
 
 const Wrapper = styled.div`
   display: flex;
@@ -37,6 +39,8 @@ const Caption = styled.div`
 `;
 
 const Header = () => {
+  const [isMobile, setIsMobile] = useState(true);
+
   useEffect(() => {
     gsap.fromTo(
       `#logo`,
@@ -65,14 +69,33 @@ const Header = () => {
         delay: 1,
       },
     );
-  });
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const mbp = Number(breakpoints.m.replace(/[^0-9]/g, ""));
+      if (window.innerWidth <= mbp) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
+
+    handleResize();
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", handleResize, { passive: true });
+    }
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <Wrapper>
       <Caption>
         <Image id='logo' src={Logo} />
         <Title id='caption'>Paila</Title>
       </Caption>
-      <nav></nav>
+      <NavMenu isMobile={isMobile} />
     </Wrapper>
   );
 };

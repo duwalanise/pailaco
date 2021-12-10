@@ -13,12 +13,6 @@ const Wrapper = styled.div`
   opacity: 0;
 `;
 
-const Title = styled.span`
-  font-size: 48px;
-  font-weight: bold;
-  color: #5f9ea0;
-`;
-
 const ProductWrapper = styled.div`
   display: flex;
   width: 100%;
