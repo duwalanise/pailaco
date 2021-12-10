@@ -45,7 +45,7 @@ const Header = () => {
 
   useEffect(() => {
     gsap.fromTo(
-      `#logo`,
+      "#logo",
       {
         transform: "translate(40vw, 45vh) scale(3)",
         opacity: 1,
@@ -59,7 +59,7 @@ const Header = () => {
       },
     );
     gsap.fromTo(
-      `#caption`,
+      "#caption",
       {
         transform: "translateX(100vw) scale(1.5)",
       },

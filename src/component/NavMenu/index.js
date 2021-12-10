@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
+import { gsap } from "gsap";
 import Hamburger from "../../images/hamburger.svg";
 import Drawer from "../Drawer";
+import { useEffect } from "react";
 
 const SectionWrapper = styled.div`
   display: flex;
+  opacity: 0;
 `;
 
 const MenuWrapper = styled.div`
@@ -56,8 +59,16 @@ const MenuHeader = ({ isMobile }) => {
     setIsDrawerOpen(!isDrawerOpen);
   };
 
+  useEffect(() => {
+    gsap.to("#nav-menu", {
+      opacity: 1,
+      ease: "power2.inOut",
+      delay: 2,
+    });
+  }, []);
+
   return (
-    <SectionWrapper noMargin>
+    <SectionWrapper id='nav-menu'>
       <MenuWrapper>
         {isMobile ? (
           <Flex>
