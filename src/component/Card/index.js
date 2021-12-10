@@ -39,6 +39,7 @@ const Card = ({ product }) => {
   useEffect(() => {
     gsap.to(`#product${product.id}`, {
       transform: `translateY(${50 * Number(product.id)}px)`,
+      delay: 2,
     });
   });
   return (

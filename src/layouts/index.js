@@ -7,8 +7,10 @@ import MouseFollow from "../component/MouseFollow";
 import "../main.css";
 
 const Wrapper = styled.main`
-  width: 100vw;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   overflow-x: hidden;
   background: #f6fafe;
 `;
