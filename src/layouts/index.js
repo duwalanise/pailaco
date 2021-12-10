@@ -13,6 +13,7 @@ const Wrapper = styled.main`
   flex-direction: column;
   overflow-x: hidden;
   background: #f6fafe;
+  padding-top: 64px;
 `;
 
 const Layout = ({ children, ...props }) => {

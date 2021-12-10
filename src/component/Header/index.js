@@ -6,28 +6,34 @@ import Logo from "../../images/icon.png";
 const Wrapper = styled.div`
   display: flex;
   width: 100%;
-  max-width: 1220px;
-  padding: 8px 24px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12%;
   margin: auto;
   z-index: 10;
+  position: fixed;
+  top: 0;
+  @media (max-width: 600px) {
+    padding: 8px 24px;
+  },
 `;
 
 const Image = styled.img`
   height: 60px;
+  opacity: 0;
 `;
 
 const Title = styled.span`
   font-size: 32px;
   font-weight: bold;
   color: #5f9ea0;
+  margin-top: 16px;
+  margin-left: -16px;
+  opacity: 0;
 `;
 
 const Caption = styled.div`
   display: flex;
-  align-items: baseline;
-  margin-left: -16px;
-  margin-top: 16px;
-  width: 100%;
 `;
 
 const Header = () => {
@@ -36,6 +42,7 @@ const Header = () => {
       `#logo`,
       {
         transform: "translate(40vw, 45vh) scale(3)",
+        opacity: 1,
       },
       {
         transform: "translate(0, 0) scale(1)",
@@ -48,10 +55,11 @@ const Header = () => {
     gsap.fromTo(
       `#caption`,
       {
-        transform: "translateX(140%) scale(1.5)",
+        transform: "translateX(100vw) scale(1.5)",
       },
       {
         transform: "translateX(0) scale(1)",
+        opacity: 1,
         duration: 1.3,
         ease: "bounce",
         delay: 1,
@@ -60,10 +68,11 @@ const Header = () => {
   });
   return (
     <Wrapper>
-      <Image id='logo' src={Logo} />
-      <Caption id='caption'>
-        <Title>Paila</Title> a step towards quality.
+      <Caption>
+        <Image id='logo' src={Logo} />
+        <Title id='caption'>Paila</Title>
       </Caption>
+      <nav></nav>
     </Wrapper>
   );
 };

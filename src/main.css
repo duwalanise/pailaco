@@ -348,3 +348,23 @@ summary {
 [hidden] {
   display: none;
 }
+
+/* This will work on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #5f9ea0;
+}
+
+/* Targtes on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #5f9ea0;
+  border-radius: 24px;
+}
