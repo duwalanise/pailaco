@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "gatsby";
 import styled from "@emotion/styled";
 import { gsap } from "gsap";
 import Logo from "../../images/icon.png";
@@ -34,8 +35,9 @@ const Title = styled.span`
   opacity: 0;
 `;
 
-const Caption = styled.div`
+const Caption = styled(Link)`
   display: flex;
+  text-decoration: none;
 `;
 
 const Header = () => {
@@ -91,7 +93,7 @@ const Header = () => {
 
   return (
     <Wrapper>
-      <Caption>
+      <Caption to='/'>
         <Image id='logo' src={Logo} />
         <Title id='caption'>Paila</Title>
       </Caption>
