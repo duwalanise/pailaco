@@ -16,6 +16,10 @@ const Wrapper = styled.div`
   z-index: 10;
   position: fixed;
   top: 0;
+  transition: all .5s ease;
+  background: ${({ shadow }) => (shadow ? "#f6fafe" : "none")};
+  box-shadow: ${({ shadow }) =>
+    shadow ? "0px 0px 10px 2px rgb(0 0 0 / 10%)" : "none"};
   @media (max-width: 600px) {
     padding: 8px 24px;
   },
@@ -42,6 +46,7 @@ const Caption = styled(Link)`
 
 const Header = () => {
   const [isMobile, setIsMobile] = useState(true);
+  const [shadow, setShadow] = useState(false);
 
   useEffect(() => {
     gsap.fromTo(
@@ -83,16 +88,28 @@ const Header = () => {
       }
     };
 
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setShadow(true);
+      } else {
+        setShadow(false);
+      }
+    };
+
     handleResize();
 
     if (typeof window !== "undefined") {
       window.addEventListener("resize", handleResize, { passive: true });
+      window.addEventListener("scroll", handleScroll, { passive: true });
     }
-    return () => window.removeEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
-    <Wrapper>
+    <Wrapper shadow={shadow}>
       <Caption to='/'>
         <Image id='logo' src={Logo} />
         <Title id='caption'>Paila</Title>

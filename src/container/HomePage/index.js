@@ -3,15 +3,13 @@ import styled from "@emotion/styled";
 import { gsap } from "gsap";
 import Card from "../../component/Card";
 import products from "../../constants/products";
-import ConstructionBg from "../../images/constructionBg.jpeg";
 
 const Wrapper = styled.div`
-  flex: 1;
   display: flex;
   align-items: center;
   flex-direction: column;
-  overflow: auto;
   opacity: 0;
+  min-height: 100vh;
   justify-content: center;
   @media (max-width: 600px) {
     justify-content: flex-start;
@@ -25,7 +23,7 @@ const ProductWrapper = styled.div`
   align-items: center;
   @media (max-width: 600px) {
     flex-direction: column;
-    margin-top: 120px;
+    margin-top: 140px;
     margin-bottom: 120px;
   }
 `;
