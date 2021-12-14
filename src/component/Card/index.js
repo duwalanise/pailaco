@@ -25,12 +25,8 @@ const Wrapper = styled.div`
     font-size: 24px;
   }
   a {
-    font-size: 14px;
     text-decoration: none;
     color: #6495ed;
-  }
-  span {
-    font-size: 14px;
   }
 `;
 
