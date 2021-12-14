@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { gsap } from "gsap";
 import Card from "../../component/Card";
 import products from "../../constants/products";
+import ConstructionBg from "../../images/constructionBg.jpeg";
 
 const Wrapper = styled.div`
   flex: 1;
@@ -11,6 +12,10 @@ const Wrapper = styled.div`
   flex-direction: column;
   overflow: auto;
   opacity: 0;
+  justify-content: center;
+  @media (max-width: 600px) {
+    justify-content: flex-start;
+  }
 `;
 
 const ProductWrapper = styled.div`
@@ -18,11 +23,11 @@ const ProductWrapper = styled.div`
   width: 100%;
   max-width: 960px;
   align-items: center;
-  margin-top: 120px;
-  margin-bottom: 120px;
   @media (max-width: 600px) {
     flex-direction: column;
-  },
+    margin-top: 120px;
+    margin-bottom: 120px;
+  }
 `;
 
 const HomePage = () => {
