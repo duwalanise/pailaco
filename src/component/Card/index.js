@@ -21,9 +21,16 @@ const Wrapper = styled.div`
   @media (max-width: 600px) {
     width: 80%;
   }
+  h3 {
+    font-size: 24px;
+  }
   a {
+    font-size: 14px;
     text-decoration: none;
     color: #6495ed;
+  }
+  span {
+    font-size: 14px;
   }
 `;
 
@@ -44,7 +51,7 @@ const Card = ({ product }) => {
   });
   return (
     <Wrapper id={`product${product.id}`}>
-      <h2>{product.name}</h2>
+      <h3>{product.name}</h3>
       <Image src={underConstruction} />
       <Contact>
         <div>

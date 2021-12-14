@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 const ProductWrapper = styled.div`
   display: flex;
   width: 100%;
-  max-width: 960px;
+  max-width: 1061px;
   align-items: center;
   @media (max-width: 600px) {
     flex-direction: column;
