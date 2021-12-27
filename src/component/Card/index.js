@@ -52,6 +52,12 @@ const Card = ({ product }) => {
       <Contact>
         <div>
           <span>Contact: </span>
+          <a href={product.linkedIn} target='_blank'>
+            {product.person}
+          </a>
+        </div>
+        <div>
+          <span>Phone: </span>
           <a href={`tel:${product.contact}`}>{product.contact}</a>
         </div>
         <div>

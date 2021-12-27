@@ -1,20 +1,26 @@
 export default [
   {
     id: "-1",
-    name: "Consultancy",
+    name: "Consultancy Services",
+    person: "Anil Sapkota",
     contact: "+977-9851325755",
-    email: "pailaconsult77@gmail.com",
+    email: "anil@pailaco.com.np",
+    linkedIn: "https://www.linkedin.com/in/anil-sapkota-aa142499/",
   },
   {
     id: "0",
     name: "Construction & Suppliers",
+    person: "Santosh GC",
     contact: "+977-9813822364",
-    email: "constructionpaila98@gmail.com",
+    email: "santosh@pailaco.com.np",
+    linkedIn: "https://www.linkedin.com/in/santosh-gc-42342799/",
   },
   {
     id: "1",
-    name: "Technology",
+    name: "Technology Services",
+    person: "Anish Duwal",
     contact: "+977-9841133770",
-    email: "paila.tech.pvt.ltd@gmail.com",
+    email: "anish@pailaco.com.np",
+    linkedIn: "https://www.linkedin.com/in/anishduwal/",
   },
 ];
